@@ -1,0 +1,12 @@
+1|1|Gffgfg|Gffg|gffg|gffg|gffg|
+2|1|Ffg|Gfgf|fggf|gfgf|fgfgfg|
+3|2|Ffdf|Fdfd|fdfd|fdfdf||
+4|2|D|Fdfd|fdf|fd|df|
+5|3|Dds|Dd|d|d|d|
+6|3||D|d|d|d|
+7|1|Fddf|Fddf|fdfd|fdfd|fdfd|
+8|1|Fdfd|Fddf|fdfd|fddf|ffdfd|
+9|1|Ssd|Dsds|dsds|dssd|dssd|
+10|1|Ssd|Dssd|ds|ds|ds|
+11|3|Sdssd|Dssd|sdds|dssd|dssd|
+12|3|D|D|d|d|d|
