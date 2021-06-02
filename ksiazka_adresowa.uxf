@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>180</y>
+      <y>160</y>
       <w>220</w>
       <h>140</h>
     </coordinates>
@@ -20,7 +20,7 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>720</x>
+      <x>680</x>
       <y>0</y>
       <w>100</w>
       <h>100</h>
@@ -35,15 +35,16 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
-      <y>100</y>
+      <x>230</x>
+      <y>90</y>
       <w>370</w>
-      <h>240</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>UzytkownikMenedzer
 --
 -idZalogowanegoUzytkownika : integer
 -uzytkownicy: vector &lt;Uzytkownik&gt;
+-plikZUzytkownikami: PlikZUzytkownikami
 --
 +rejestracjaUzytkownika(): void
 +logowanieUzytkownika():integer
@@ -56,6 +57,8 @@ KsiazkaAdresowa()
 + zmianaHaslaZalogowanegoUzytkownika():void
 + wylogowanieUzytkownika():void
 + pobierzIdZalogowanegoUzytkownika(): int
++ ustawIdZalogowanegoUzytkownika (int noweIdZalogowanegoUzytkownika):void
++ czyUzytkownikJestZalogowany():bool
 
 
 
@@ -65,10 +68,10 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
+      <x>610</x>
       <y>120</y>
       <w>620</w>
-      <h>200</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>PlikZUzytkownikami
 --
@@ -85,71 +88,77 @@ KsiazkaAdresowa()
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1320</x>
-      <y>290</y>
-      <w>310</w>
-      <h>110</h>
+      <x>1280</x>
+      <y>180</y>
+      <w>510</w>
+      <h>310</h>
     </coordinates>
     <panel_attributes>MetodyPomocnicze
 --
 --
-+konwerjsaIntNaString(): string
-+ wczytajLinie():string
-+ czyPlikJestPusty(fstream &amp;plikTekstowy):bool
-+ zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst):string
-+pobierzLiczbe(string tekst, int pozycjaZnaku):string
-+konwersjaStringNaInt(string liczba):int</panel_attributes>
++konwerjsaIntNaString(): static string
++ wczytajLinie(): static string
++ czyPlikJestPusty(fstream &amp;plikTekstowy): static bool
++ zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst):static string
++pobierzLiczbe(string tekst, int pozycjaZnaku):static string
++konwersjaStringNaInt(string liczba):static int
++wybierzOpcjeZMenuGlownego():static char
++ wczytajZnak():static char
++wybierzOpcjeZMenuUzytkownika():static char</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>270</x>
+      <x>230</x>
       <y>360</y>
       <w>370</w>
       <h>260</h>
     </coordinates>
     <panel_attributes>AdresatMenedzer
 --
--adresaci: vector &lt;Adresat&gt; 
--idOstatniegoAdresata:int
--idZalogowanegoUzytkownika:int
-- nazwaPlikuZAdresatami:string
+-ID_ZALOGOWANEGO_UZYTKOWNIKA:const int 
+- adresaci:vector &lt;Adresat&gt;
+- plikZAdresatami: PlikZAdresatami
 --
 -pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami):Adresat
 -pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): int 
-+wyczyscWektor():void
+-wyswietlDaneAdresata(Adresat adresat):void 
++AdresatMenedzer(string nazwaPlikuZAdresatami,int idZalogowanegoUzytkownika)
 +ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika):void
 +wczytajAdresatowZalogowanegoUzytkownikaZPliku():void
 +dodajAdresata():void
--podajDaneNowegoAdresata():Adresat
 +wyswietlWszystkichAdresatow():void
--wyswietlDaneAdresata(Adresat adresat):void 
+
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>660</x>
-      <y>360</y>
+      <x>620</x>
+      <y>330</y>
       <w>640</w>
-      <h>150</h>
+      <h>190</h>
     </coordinates>
     <panel_attributes>PlikZAdresatami
 --
--nazwaPlikuZAdresatami: string
+-nazwaPlikuZAdresatami: const string
+- idOstatniegoAdresata: int
 --
 +dopiszAdresataDoPliku(Adresat adresat):void
 -zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat):string
 +pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): int
--pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): int</panel_attributes>
+-pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami): int
+- pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami): Adresat
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika): vector &lt;Adresat&gt;
++ int pobierzIdOstatniegoAdresata():int</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
+      <x>660</x>
       <y>540</y>
       <w>150</w>
       <h>170</h>

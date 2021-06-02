@@ -12,19 +12,20 @@
 using namespace std;
 class AdresatMenedzer
 {
-    int idZalogowanegoUzytkownika;
-    int idOstatniegoAdresata;
+    const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
     vector <Adresat> adresaci;
-    string nazwaPlikuZAdresatami;
-    Adresat podajDaneNowegoAdresata();
+    PlikZAdresatami plikZAdresatami;
+Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-    Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     void wyswietlDaneAdresata(Adresat adresat);
 public:
-    void wyczyscWektor();
-    void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    AdresatMenedzer(string nazwaPlikuZAdresatami,int idZalogowanegoUzytkownika)
+    :plikZAdresatami( nazwaPlikuZAdresatami),ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
+        adresaci=plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+    };
+
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+
 };
 #endif

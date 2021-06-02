@@ -14,12 +14,13 @@ class UzytkownikMenedzer
     vector <Uzytkownik> uzytkownicy;
 
     Uzytkownik podajDaneNowegoUzytkownika();
+    PlikZUzytkownikami plikZUzytkownikami;
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin( string login);
-    PlikZUzytkownikami plikZUzytkownikami;
     string wczytajLinie();
 public:
-    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    UzytkownikMenedzer(string nazwaPlikuZUzytkownikami):plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
+    idZalogowanegoUzytkownika=0;};
     void rejestracjaUzytkownika();
     int logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
@@ -27,5 +28,7 @@ public:
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
     int pobierzIdZalogowanegoUzytkownika();
+    void ustawIdZalogowanegoUzytkownika (int noweIdZalogowanegoUzytkownika);
+    bool czyUzytkownikJestZalogowany();
 };
 #endif

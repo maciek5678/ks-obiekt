@@ -1,6 +1,10 @@
 #include "UzytkownikMenedzer.h"
 
 using namespace std;
+void UzytkownikMenedzer::ustawIdZalogowanegoUzytkownika (int noweIdZalogowanegoUzytkownika)
+{
+    idZalogowanegoUzytkownika=noweIdZalogowanegoUzytkownika;
+}
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
@@ -34,7 +38,8 @@ int UzytkownikMenedzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return idZalogowanegoUzytkownika=itr -> pobierzID();
+                    idZalogowanegoUzytkownika=itr -> pobierzID();
+                    return idZalogowanegoUzytkownika;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
@@ -131,4 +136,10 @@ int UzytkownikMenedzer::pobierzIdZalogowanegoUzytkownika()
 {
     return idZalogowanegoUzytkownika;
 }
-
+bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
+{
+    if(idZalogowanegoUzytkownika>0)
+        return true;
+    else
+        return false;
+}
