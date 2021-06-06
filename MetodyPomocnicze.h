@@ -10,13 +10,13 @@ class MetodyPomocnicze
 public:
     static string konwerjsaIntNaString(int liczba);
     static string wczytajLinie();
-    static bool czyPlikJestPusty(fstream &plikTekstowy);
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
     static int konwersjaStringNaInt(string liczba);
     static char wybierzOpcjeZMenuGlownego();
     static char wczytajZnak();
     static char wybierzOpcjeZMenuUzytkownika();
+    static int wczytajLiczbeCalkowita();
 
 };
 

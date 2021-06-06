@@ -143,3 +143,4 @@ bool UzytkownikMenedzer::czyUzytkownikJestZalogowany()
     else
         return false;
 }
+

@@ -6,7 +6,9 @@
 #include <fstream>
 #include <sstream>
 #include "Uzytkownik.h"
+#include "PlikTekstowy.h"
 #include "PlikZUzytkownikami.h"
+
 using namespace std;
 class UzytkownikMenedzer
 {
@@ -30,5 +32,6 @@ public:
     int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika (int noweIdZalogowanegoUzytkownika);
     bool czyUzytkownikJestZalogowany();
+
 };
 #endif

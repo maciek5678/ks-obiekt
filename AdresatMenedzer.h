@@ -9,6 +9,7 @@
 #include "UzytkownikMenedzer.h"
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
+#include "PlikTekstowy.h"
 using namespace std;
 class AdresatMenedzer
 {
@@ -18,6 +19,9 @@ class AdresatMenedzer
 Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     void wyswietlDaneAdresata(Adresat adresat);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami,int idZalogowanegoUzytkownika)
     :plikZAdresatami( nazwaPlikuZAdresatami),ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
@@ -26,6 +30,12 @@ public:
 
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void usunAdresata();
+
+void edytujAdresata();
+
+void wyszukajAdresatowPoImieniu();
+void wyszukajAdresatowPoNazwisku();
 
 };
 #endif
