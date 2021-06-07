@@ -1,6 +1,4 @@
-3|2|X|X|x|x|x|
-4|2|X|X|x|x|x|
-5|1|S|A|a|a|a|
-7|10|R|R|r|r|r|
-8|1|D|D|d|d|d|
-9|5|S|D|d|d|d|
+1|1|S|S|s|s|s|
+3|2|G|G|g|g|g|
+4|2|J|J|j|j|j|
+5|1|B|B|b|b|b|

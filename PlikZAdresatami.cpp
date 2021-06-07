@@ -171,10 +171,13 @@ int numerLiniiWNowymPlikuTekstowym = 1;
                  if (numerLiniiWNowymPlikuTekstowym  == 1){
                 tymczasowyPlikTekstowy << daneJednegoAdresataOddzielonePionowymiKreskami;
                 numerLiniiWNowymPlikuTekstowym++;
+
             }
-            else if (numerLiniiWNowymPlikuTekstowym  > 1)
+            else if (numerLiniiWNowymPlikuTekstowym  > 1){
 tymczasowyPlikTekstowy <<endl<< daneJednegoAdresataOddzielonePionowymiKreskami;
             numerLiniiWNowymPlikuTekstowym++;
+            }
+            idOstatniegoAdresata=pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneJednegoAdresataOddzielonePionowymiKreskami);
             }
         }
             tymczasowyPlikTekstowy.close();
